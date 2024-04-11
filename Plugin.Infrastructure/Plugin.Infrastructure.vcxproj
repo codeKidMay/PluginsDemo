@@ -27,6 +27,10 @@
     <ClInclude Include="base\pattern\AFSingleton.hpp" />
     <ClInclude Include="interface\AFIModule.hpp" />
     <ClInclude Include="interface\AFIPlugin.hpp" />
+    <ClInclude Include="PluginManager.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="PluginManager.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
