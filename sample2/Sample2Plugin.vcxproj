@@ -1,0 +1,406 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{934DC8BF-0114-39A5-8A80-53419C832EEB}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <VcpkgEnabled>false</VcpkgEnabled>
+    <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>Sample2Plugin</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="do_not_import_user.props" Condition="exists('do_not_import_user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\build\bin\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Sample2Plugin.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Sample2Plugin_d</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\build\bin\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Sample2Plugin.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Sample2Plugin</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\build\bin\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Sample2Plugin.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Sample2Plugin</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\build\bin\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Sample2Plugin.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Sample2Plugin</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\Plugin.Infrastructure;</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /bigobj</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;_CRT_SECURE_NO_WARNINGS;_SILENCE_CXX17_C_HEADER_DEPRECATION_WARNING;OPEN_FILE_LOG;WIN32_LEAN_AND_MEAN;_WIN32_WINNT=0x0601;_USRDLL;CMAKE_INTDIR="Debug";Sample2Plugin_EXPORTS</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;_CRT_SECURE_NO_WARNINGS;_SILENCE_CXX17_C_HEADER_DEPRECATION_WARNING;OPEN_FILE_LOG;WIN32_LEAN_AND_MEAN;_WIN32_WINNT=0x0601;_USRDLL;CMAKE_INTDIR=\"Debug\";Sample2Plugin_EXPORTS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>E:\WorkDocument\2024.4CAD-CAM\PluginFrame\vcpkg\installed\x64-windows\include;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\3rdparty;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\3rdparty\zephyr\include;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\3rdparty\spdlog\include;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\src;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\src\plugin;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\src\server;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\src\escort;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>E:\WorkDocument\2024.4CAD-CAM\PluginFrame\vcpkg\installed\x64-windows\include;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\3rdparty;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\3rdparty\zephyr\include;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\3rdparty\spdlog\include;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\src;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\src\plugin;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\src\server;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\src\escort;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message>
+      </Message>
+      <Command>setlocal
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noprofile -executionpolicy Bypass -file E:/WorkDocument/2024.4CAD-CAM/PluginFrame/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary E:/WorkDocument/2024.4CAD-CAM/PluginFrame/ARK/build/bin/Sample2Plugin_d.dll -installedDir E:/WorkDocument/2024.4CAD-CAM/PluginFrame/vcpkg/installed/x64-windows/debug/bin -OutVariable out
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>AFProto_d.lib;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\vcpkg\installed\x64-windows\debug\lib\libprotobufd.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>E:/WorkDocument/2024.4CAD-CAM/PluginFrame/vcpkg/installed/x64-windows/lib;E:/WorkDocument/2024.4CAD-CAM/PluginFrame/vcpkg/installed/x64-windows/lib/$(Configuration);E:/WorkDocument/2024.4CAD-CAM/PluginFrame/ARK/build/bin;E:/WorkDocument/2024.4CAD-CAM/PluginFrame/ARK/build/bin/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>E:/WorkDocument/2024.4CAD-CAM/PluginFrame/ARK/build/bin/Sample2Plugin_d.lib</ImportLibrary>
+      <ProgramDataBaseFile>E:/WorkDocument/2024.4CAD-CAM/PluginFrame/ARK/build/bin/Sample2Plugin_d.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>E:\WorkDocument\2024.4CAD-CAM\PluginFrame\vcpkg\installed\x64-windows\include;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\3rdparty;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\3rdparty\zephyr\include;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\3rdparty\spdlog\include;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\src;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\src\plugin;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\src\server;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\src\escort;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /bigobj</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;_CRT_SECURE_NO_WARNINGS;_SILENCE_CXX17_C_HEADER_DEPRECATION_WARNING;NDEBUG;OPEN_FILE_LOG;WIN32_LEAN_AND_MEAN;_WIN32_WINNT=0x0601;_USRDLL;CMAKE_INTDIR="Release";Sample2Plugin_EXPORTS</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;_CRT_SECURE_NO_WARNINGS;_SILENCE_CXX17_C_HEADER_DEPRECATION_WARNING;NDEBUG;OPEN_FILE_LOG;WIN32_LEAN_AND_MEAN;_WIN32_WINNT=0x0601;_USRDLL;CMAKE_INTDIR=\"Release\";Sample2Plugin_EXPORTS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>E:\WorkDocument\2024.4CAD-CAM\PluginFrame\vcpkg\installed\x64-windows\include;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\3rdparty;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\3rdparty\zephyr\include;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\3rdparty\spdlog\include;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\src;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\src\plugin;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\src\server;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\src\escort;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>E:\WorkDocument\2024.4CAD-CAM\PluginFrame\vcpkg\installed\x64-windows\include;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\3rdparty;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\3rdparty\zephyr\include;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\3rdparty\spdlog\include;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\src;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\src\plugin;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\src\server;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\src\escort;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message>
+      </Message>
+      <Command>setlocal
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noprofile -executionpolicy Bypass -file E:/WorkDocument/2024.4CAD-CAM/PluginFrame/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary E:/WorkDocument/2024.4CAD-CAM/PluginFrame/ARK/build/bin/Sample2Plugin.dll -installedDir E:/WorkDocument/2024.4CAD-CAM/PluginFrame/vcpkg/installed/x64-windows/bin -OutVariable out
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>AFProto.lib;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\vcpkg\installed\x64-windows\lib\libprotobuf.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>E:/WorkDocument/2024.4CAD-CAM/PluginFrame/vcpkg/installed/x64-windows/lib;E:/WorkDocument/2024.4CAD-CAM/PluginFrame/vcpkg/installed/x64-windows/lib/$(Configuration);E:/WorkDocument/2024.4CAD-CAM/PluginFrame/ARK/build/bin;E:/WorkDocument/2024.4CAD-CAM/PluginFrame/ARK/build/bin/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>E:/WorkDocument/2024.4CAD-CAM/PluginFrame/ARK/build/bin/Sample2Plugin.lib</ImportLibrary>
+      <ProgramDataBaseFile>E:/WorkDocument/2024.4CAD-CAM/PluginFrame/ARK/build/bin/Sample2Plugin.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>E:\WorkDocument\2024.4CAD-CAM\PluginFrame\vcpkg\installed\x64-windows\include;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\3rdparty;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\3rdparty\zephyr\include;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\3rdparty\spdlog\include;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\src;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\src\plugin;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\src\server;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\src\escort;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /bigobj</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;_CRT_SECURE_NO_WARNINGS;_SILENCE_CXX17_C_HEADER_DEPRECATION_WARNING;NDEBUG;OPEN_FILE_LOG;WIN32_LEAN_AND_MEAN;_WIN32_WINNT=0x0601;_USRDLL;CMAKE_INTDIR="MinSizeRel";Sample2Plugin_EXPORTS</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;_CRT_SECURE_NO_WARNINGS;_SILENCE_CXX17_C_HEADER_DEPRECATION_WARNING;NDEBUG;OPEN_FILE_LOG;WIN32_LEAN_AND_MEAN;_WIN32_WINNT=0x0601;_USRDLL;CMAKE_INTDIR=\"MinSizeRel\";Sample2Plugin_EXPORTS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>E:\WorkDocument\2024.4CAD-CAM\PluginFrame\vcpkg\installed\x64-windows\include;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\3rdparty;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\3rdparty\zephyr\include;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\3rdparty\spdlog\include;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\src;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\src\plugin;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\src\server;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\src\escort;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>E:\WorkDocument\2024.4CAD-CAM\PluginFrame\vcpkg\installed\x64-windows\include;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\3rdparty;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\3rdparty\zephyr\include;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\3rdparty\spdlog\include;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\src;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\src\plugin;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\src\server;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\src\escort;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message>
+      </Message>
+      <Command>setlocal
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noprofile -executionpolicy Bypass -file E:/WorkDocument/2024.4CAD-CAM/PluginFrame/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary E:/WorkDocument/2024.4CAD-CAM/PluginFrame/ARK/build/bin/MinSizeRel/Sample2Plugin.dll -installedDir E:/WorkDocument/2024.4CAD-CAM/PluginFrame/vcpkg/installed/x64-windows/bin -OutVariable out
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>AFProto.lib;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\vcpkg\installed\x64-windows\lib\libprotobuf.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>E:/WorkDocument/2024.4CAD-CAM/PluginFrame/vcpkg/installed/x64-windows/lib;E:/WorkDocument/2024.4CAD-CAM/PluginFrame/vcpkg/installed/x64-windows/lib/$(Configuration);E:/WorkDocument/2024.4CAD-CAM/PluginFrame/ARK/build/bin;E:/WorkDocument/2024.4CAD-CAM/PluginFrame/ARK/build/bin/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>E:/WorkDocument/2024.4CAD-CAM/PluginFrame/ARK/build/bin/MinSizeRel/Sample2Plugin.lib</ImportLibrary>
+      <ProgramDataBaseFile>E:/WorkDocument/2024.4CAD-CAM/PluginFrame/ARK/build/bin/MinSizeRel/Sample2Plugin.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>E:\WorkDocument\2024.4CAD-CAM\PluginFrame\vcpkg\installed\x64-windows\include;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\3rdparty;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\3rdparty\zephyr\include;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\3rdparty\spdlog\include;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\src;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\src\plugin;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\src\server;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\src\escort;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /bigobj</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;_CRT_SECURE_NO_WARNINGS;_SILENCE_CXX17_C_HEADER_DEPRECATION_WARNING;NDEBUG;OPEN_FILE_LOG;WIN32_LEAN_AND_MEAN;_WIN32_WINNT=0x0601;_USRDLL;CMAKE_INTDIR="RelWithDebInfo";Sample2Plugin_EXPORTS</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;_CRT_SECURE_NO_WARNINGS;_SILENCE_CXX17_C_HEADER_DEPRECATION_WARNING;NDEBUG;OPEN_FILE_LOG;WIN32_LEAN_AND_MEAN;_WIN32_WINNT=0x0601;_USRDLL;CMAKE_INTDIR=\"RelWithDebInfo\";Sample2Plugin_EXPORTS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>E:\WorkDocument\2024.4CAD-CAM\PluginFrame\vcpkg\installed\x64-windows\include;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\3rdparty;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\3rdparty\zephyr\include;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\3rdparty\spdlog\include;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\src;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\src\plugin;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\src\server;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\src\escort;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>E:\WorkDocument\2024.4CAD-CAM\PluginFrame\vcpkg\installed\x64-windows\include;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\3rdparty;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\3rdparty\zephyr\include;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\3rdparty\spdlog\include;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\src;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\src\plugin;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\src\server;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\src\escort;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message>
+      </Message>
+      <Command>setlocal
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noprofile -executionpolicy Bypass -file E:/WorkDocument/2024.4CAD-CAM/PluginFrame/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary E:/WorkDocument/2024.4CAD-CAM/PluginFrame/ARK/build/bin/RelWithDebInfo/Sample2Plugin.dll -installedDir E:/WorkDocument/2024.4CAD-CAM/PluginFrame/vcpkg/installed/x64-windows/bin -OutVariable out
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>AFProto.lib;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\vcpkg\installed\x64-windows\lib\libprotobuf.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>E:/WorkDocument/2024.4CAD-CAM/PluginFrame/vcpkg/installed/x64-windows/lib;E:/WorkDocument/2024.4CAD-CAM/PluginFrame/vcpkg/installed/x64-windows/lib/$(Configuration);E:/WorkDocument/2024.4CAD-CAM/PluginFrame/ARK/build/bin;E:/WorkDocument/2024.4CAD-CAM/PluginFrame/ARK/build/bin/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>E:/WorkDocument/2024.4CAD-CAM/PluginFrame/ARK/build/bin/RelWithDebInfo/Sample2Plugin.lib</ImportLibrary>
+      <ProgramDataBaseFile>E:/WorkDocument/2024.4CAD-CAM/PluginFrame/ARK/build/bin/RelWithDebInfo/Sample2Plugin.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\examples\sample2\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule E:/WorkDocument/2024.4CAD-CAM/PluginFrame/ARK/examples/sample2/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+D:\Software\CMakeGui\bin\cmake.exe -SE:/WorkDocument/2024.4CAD-CAM/PluginFrame/ARK -BE:/WorkDocument/2024.4CAD-CAM/PluginFrame/ARK --check-stamp-file E:/WorkDocument/2024.4CAD-CAM/PluginFrame/ARK/examples/sample2/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\examples\sample2\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule E:/WorkDocument/2024.4CAD-CAM/PluginFrame/ARK/examples/sample2/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+D:\Software\CMakeGui\bin\cmake.exe -SE:/WorkDocument/2024.4CAD-CAM/PluginFrame/ARK -BE:/WorkDocument/2024.4CAD-CAM/PluginFrame/ARK --check-stamp-file E:/WorkDocument/2024.4CAD-CAM/PluginFrame/ARK/examples/sample2/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\examples\sample2\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule E:/WorkDocument/2024.4CAD-CAM/PluginFrame/ARK/examples/sample2/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+D:\Software\CMakeGui\bin\cmake.exe -SE:/WorkDocument/2024.4CAD-CAM/PluginFrame/ARK -BE:/WorkDocument/2024.4CAD-CAM/PluginFrame/ARK --check-stamp-file E:/WorkDocument/2024.4CAD-CAM/PluginFrame/ARK/examples/sample2/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\examples\sample2\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule E:/WorkDocument/2024.4CAD-CAM/PluginFrame/ARK/examples/sample2/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+D:\Software\CMakeGui\bin\cmake.exe -SE:/WorkDocument/2024.4CAD-CAM/PluginFrame/ARK -BE:/WorkDocument/2024.4CAD-CAM/PluginFrame/ARK --check-stamp-file E:/WorkDocument/2024.4CAD-CAM/PluginFrame/ARK/examples/sample2/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\examples\sample2\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\examples\sample2\Sample2Module.cpp" />
+    <ClCompile Include="E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\examples\sample2\Sample2Plugin.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\ZERO_CHECK.vcxproj">
+      <Project>{680ED490-AD52-3D9D-871D-31A9D040D508}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\src\proto\AFProto.vcxproj">
+      <Project>{64659017-DD08-3058-A74C-D0CD7D39F59F}</Project>
+      <Name>AFProto</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Sample2Module.h" />
+    <ClInclude Include="Sample2Plugin.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

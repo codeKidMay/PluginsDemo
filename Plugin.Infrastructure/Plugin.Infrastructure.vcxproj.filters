@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Interface">
+      <UniqueIdentifier>{9842b535-5e96-43d5-b987-8509cde3ae00}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="base">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="base\pattern">
+      <UniqueIdentifier>{567fb5ff-dc12-472e-855f-6a248622989d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="base\AFDynLib.hpp">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\AFMacros.hpp">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\AFNoncopyable.hpp">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\AFPlatform.hpp">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\AFPluginManager.hpp">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\pattern\AFSingleton.hpp">
+      <Filter>base\pattern</Filter>
+    </ClInclude>
+    <ClInclude Include="interface\AFIModule.hpp">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="interface\AFIPlugin.hpp">
+      <Filter>Interface</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
