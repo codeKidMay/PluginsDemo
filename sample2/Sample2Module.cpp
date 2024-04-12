@@ -28,7 +28,7 @@ bool Sample2Module::Shut()
 
 void Sample2Module::ImportFile(const std::string& strFilePath_)
 {
-
+    MessageBox(NULL, "执行导入文件", "提示", MB_OK);
 }
 
 } // namespace ark

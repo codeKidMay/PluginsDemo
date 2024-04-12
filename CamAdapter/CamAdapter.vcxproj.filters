@@ -15,12 +15,18 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CamAdapter.h">
+    <ClInclude Include="CSharpAdapter.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandManager.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CamAdapter.cpp">
+    <ClCompile Include="CSharpAdapter.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CommandManager.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

@@ -1,4 +1,5 @@
 #pragma once
+#include <string>
 #include "interface/AFIPlugin.hpp"
 #include "interface/AFIModule.hpp"
 #include "base/AFPluginManager.hpp"
@@ -10,6 +11,6 @@ namespace ark
     public:
         explicit ISample2Module() = default;
 
-        virtual void ImportFile(cosnt std::string& strFilePath_) = 0;
+        virtual void ImportFile(const std::string& strFilePath_) = 0;
     };
 }

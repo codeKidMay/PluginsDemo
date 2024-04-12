@@ -35,7 +35,7 @@ void Sample1Module::PartRecognition(const std::string& strFilePath_)
 {
     m_pSample2Module->ImportFile(strFilePath_);
 
-    std::cout << "执行零件识别" << std::endl;
+    MessageBox(NULL, "执行零件识别", "提示", MB_OK);
 }
 
 }

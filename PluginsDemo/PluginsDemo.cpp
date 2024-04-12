@@ -8,11 +8,9 @@ using namespace MyMainWindow;
 [STAThread]
 int main()
 {
-	CPluginManager _PluginManager;
-	_PluginManager.Initialize();
-
-	//启动主窗口界面
+	// 启动主窗口界面
 	MyMainWindow::MainWindow^ wd1 = gcnew MyMainWindow::MainWindow();
+	wd1->ShowDialog();
 
 	return 0;
 }

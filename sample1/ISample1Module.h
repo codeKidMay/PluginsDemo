@@ -1,5 +1,5 @@
 #pragma once
-#include <list>
+#include <string>
 #include "base/AFPluginManager.hpp"
 #include "interface/AFIPlugin.hpp"
 #include "interface/AFIModule.hpp"

@@ -28,7 +28,7 @@ static bool CollectPlugins(std::filesystem::path& strPluginDir_, std::unordered_
 
 CPluginManager::CPluginManager()
 {
-
+	m_pPluginManager = ark::AFPluginManager::instance();
 }
 
 bool CPluginManager::Initialize()
@@ -38,13 +38,7 @@ bool CPluginManager::Initialize()
 	std::filesystem::path strPluginDir_ = getExeDirectory();
 	strPluginDir_ /= "Plugins\\";
 	CollectPlugins(strPluginDir_, _mapPlugins);
-	AFPluginManager::instance()->Start(0, strPluginDir_.string(), plugin_conf_dir, _mapPlugins);
+	m_pPluginManager->Start(0, strPluginDir_.string(), plugin_conf_dir, _mapPlugins);
 
 	return true;
-}
-
-template <class IModule>
-AFIModule* CPluginManager::GetModule()
-{
-	return AFPluginManager::instance()->FindModule<IModule>();
 }
