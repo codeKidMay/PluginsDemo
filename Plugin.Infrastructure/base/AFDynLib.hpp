@@ -30,9 +30,9 @@ public:
     explicit AFDynLib(const std::string& lib_name)
         : name_(lib_name)
     {
-#ifdef ARK_RUN_MODE_DEBUG
-        name_.append("_d");
-#endif
+//#ifdef ARK_RUN_MODE_DEBUG
+//        name_.append("_d");
+//#endif
 
 #ifdef ARK_PLATFORM_WIN
         name_.append(".dll");

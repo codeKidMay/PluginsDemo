@@ -43,6 +43,9 @@
     <ClInclude Include="PluginManager.h">
       <Filter>PluginManager</Filter>
     </ClInclude>
+    <ClInclude Include="base\AFDefine.hpp">
+      <Filter>Base</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="PluginManager.cpp">

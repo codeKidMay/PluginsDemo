@@ -62,6 +62,13 @@
 #include <iomanip>
 #include <new>
 #include <array>
+#include <filesystem>
+
+#ifdef PLUGIN_MANAGE_EXPORTS
+#define PLUGIN_MANAGE_EXP __declspec(dllexport)
+#else
+#define PLUGIN_MANAGE_EXP __declspec(dllimport)
+#endif
 
 #if defined(__WIN32__) || defined(WIN32) || defined(_WIN32) || defined(__WIN64__) || defined(WIN64) || defined(_WIN64)
 #define ARK_PLATFORM_WIN

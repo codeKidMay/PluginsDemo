@@ -20,6 +20,7 @@
 
 #pragma once
 
+#include "base/AFDefine.hpp"
 #include "base/AFNoncopyable.hpp"
 #include "base/AFDynLib.hpp"
 #include "interface/AFIPlugin.hpp"
@@ -377,7 +378,7 @@ protected:
             plugin_libs_.insert(std::make_pair(plugin_name, pLib));
             auto func = reinterpret_cast<DLL_ENTRY_PLUGIN_FUNC>(pLib->GetSymbol("DllEntryPlugin"));
             ARK_ASSERT_RET_VAL(func != nullptr, false);
-            //func(this, plugin_name, AFLogger::instance());
+            func(this, plugin_name);
 
             return true;
         }
@@ -424,7 +425,7 @@ private:
     // app name
     std::string app_name_{"ark"};
 
-    using DLL_ENTRY_PLUGIN_FUNC = void (*)(AFPluginManager*/*, std::string const&, AFLogger**/);
+    using DLL_ENTRY_PLUGIN_FUNC = void (*)(AFPluginManager*, std::string const& /*, AFLogger */ );
     using DLL_EXIT_PLUGIN_FUNC = void (*)(AFPluginManager*);
 
     // plugin_code_name -> plugin_config

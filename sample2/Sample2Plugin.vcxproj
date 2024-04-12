@@ -27,7 +27,7 @@
     <VcpkgEnabled>false</VcpkgEnabled>
     <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
     <Platform>x64</Platform>
-    <ProjectName>Sample2Plugin</ProjectName>
+    <ProjectName>Plugin.ImportFile</ProjectName>
     <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -83,8 +83,8 @@
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
     <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\Plugins\</OutDir>
+    <TargetName>Plugin.Sample2</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -121,24 +121,20 @@
     <PostBuildEvent>
       <Message>
       </Message>
-      <Command>setlocal
-C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noprofile -executionpolicy Bypass -file E:/WorkDocument/2024.4CAD-CAM/PluginFrame/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary E:/WorkDocument/2024.4CAD-CAM/PluginFrame/ARK/build/bin/Sample2Plugin_d.dll -installedDir E:/WorkDocument/2024.4CAD-CAM/PluginFrame/vcpkg/installed/x64-windows/debug/bin -OutVariable out
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
-:cmErrorLevel
-exit /b %1
-:cmDone
-if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
     <Link>
-      <AdditionalDependencies>AFProto_d.lib;E:\WorkDocument\2024.4CAD-CAM\PluginFrame\vcpkg\installed\x64-windows\debug\lib\libprotobufd.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>E:/WorkDocument/2024.4CAD-CAM/PluginFrame/vcpkg/installed/x64-windows/lib;E:/WorkDocument/2024.4CAD-CAM/PluginFrame/vcpkg/installed/x64-windows/lib/$(Configuration);E:/WorkDocument/2024.4CAD-CAM/PluginFrame/ARK/build/bin;E:/WorkDocument/2024.4CAD-CAM/PluginFrame/ARK/build/bin/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>E:/WorkDocument/2024.4CAD-CAM/PluginFrame/ARK/build/bin/Sample2Plugin_d.lib</ImportLibrary>
-      <ProgramDataBaseFile>E:/WorkDocument/2024.4CAD-CAM/PluginFrame/ARK/build/bin/Sample2Plugin_d.pdb</ProgramDataBaseFile>
+      <ImportLibrary>
+      </ImportLibrary>
+      <ProgramDataBaseFile>
+      </ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -322,81 +318,13 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\examples\sample2\CMakeLists.txt">
-      <UseUtf8Encoding>Always</UseUtf8Encoding>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule E:/WorkDocument/2024.4CAD-CAM/PluginFrame/ARK/examples/sample2/CMakeLists.txt</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-D:\Software\CMakeGui\bin\cmake.exe -SE:/WorkDocument/2024.4CAD-CAM/PluginFrame/ARK -BE:/WorkDocument/2024.4CAD-CAM/PluginFrame/ARK --check-stamp-file E:/WorkDocument/2024.4CAD-CAM/PluginFrame/ARK/examples/sample2/CMakeFiles/generate.stamp
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
-:cmErrorLevel
-exit /b %1
-:cmDone
-if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\examples\sample2\CMakeFiles\generate.stamp</Outputs>
-      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule E:/WorkDocument/2024.4CAD-CAM/PluginFrame/ARK/examples/sample2/CMakeLists.txt</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-D:\Software\CMakeGui\bin\cmake.exe -SE:/WorkDocument/2024.4CAD-CAM/PluginFrame/ARK -BE:/WorkDocument/2024.4CAD-CAM/PluginFrame/ARK --check-stamp-file E:/WorkDocument/2024.4CAD-CAM/PluginFrame/ARK/examples/sample2/CMakeFiles/generate.stamp
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
-:cmErrorLevel
-exit /b %1
-:cmDone
-if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\examples\sample2\CMakeFiles\generate.stamp</Outputs>
-      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule E:/WorkDocument/2024.4CAD-CAM/PluginFrame/ARK/examples/sample2/CMakeLists.txt</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
-D:\Software\CMakeGui\bin\cmake.exe -SE:/WorkDocument/2024.4CAD-CAM/PluginFrame/ARK -BE:/WorkDocument/2024.4CAD-CAM/PluginFrame/ARK --check-stamp-file E:/WorkDocument/2024.4CAD-CAM/PluginFrame/ARK/examples/sample2/CMakeFiles/generate.stamp
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
-:cmErrorLevel
-exit /b %1
-:cmDone
-if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\examples\sample2\CMakeFiles\generate.stamp</Outputs>
-      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule E:/WorkDocument/2024.4CAD-CAM/PluginFrame/ARK/examples/sample2/CMakeLists.txt</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
-D:\Software\CMakeGui\bin\cmake.exe -SE:/WorkDocument/2024.4CAD-CAM/PluginFrame/ARK -BE:/WorkDocument/2024.4CAD-CAM/PluginFrame/ARK --check-stamp-file E:/WorkDocument/2024.4CAD-CAM/PluginFrame/ARK/examples/sample2/CMakeFiles/generate.stamp
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
-:cmErrorLevel
-exit /b %1
-:cmDone
-if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\examples\sample2\CMakeFiles\generate.stamp</Outputs>
-      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
-    </CustomBuild>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\examples\sample2\Sample2Module.cpp" />
-    <ClCompile Include="E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\examples\sample2\Sample2Plugin.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\ZERO_CHECK.vcxproj">
-      <Project>{680ED490-AD52-3D9D-871D-31A9D040D508}</Project>
-      <Name>ZERO_CHECK</Name>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </ProjectReference>
-    <ProjectReference Include="E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\src\proto\AFProto.vcxproj">
-      <Project>{64659017-DD08-3058-A74C-D0CD7D39F59F}</Project>
-      <Name>AFProto</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
+    <ClInclude Include="ISample2Module.h" />
     <ClInclude Include="Sample2Module.h" />
     <ClInclude Include="Sample2Plugin.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Sample2Module.cpp" />
+    <ClCompile Include="Sample2Plugin.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

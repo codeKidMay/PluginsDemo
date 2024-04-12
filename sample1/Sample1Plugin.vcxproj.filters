@@ -1,22 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\examples\sample1\Sample1Module.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\examples\sample1\Sample1Plugin.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <CustomBuild Include="E:\WorkDocument\2024.4CAD-CAM\PluginFrame\ARK\examples\sample1\CMakeLists.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <Filter Include="Source Files">
       <UniqueIdentifier>{EFF7B129-DC38-348E-BBAA-AFC9F29AB2EA}</UniqueIdentifier>
     </Filter>
     <Filter Include="Headers">
       <UniqueIdentifier>{70f3a423-5a16-45b3-8373-7469308d9281}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface">
+      <UniqueIdentifier>{84e9bfce-3937-4ca6-9bc4-67a3af45b1fc}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -26,5 +18,16 @@
     <ClInclude Include="Sample1Plugin.h">
       <Filter>Headers</Filter>
     </ClInclude>
+    <ClInclude Include="ISample1Module.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Sample1Module.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Sample1Plugin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
