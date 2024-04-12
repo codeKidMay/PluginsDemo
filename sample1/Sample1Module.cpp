@@ -6,6 +6,7 @@ namespace ark {
 
 bool Sample1Module::Init()
 {
+    std::cout << GET_CLASS_NAME(Sample1Module) << ", Init" << std::endl;
     m_pSample2Module = FindModule<ISample2Module>();
 
     return true;
