@@ -14,6 +14,15 @@
     <Filter Include="Base\Pattern">
       <UniqueIdentifier>{567fb5ff-dc12-472e-855f-6a248622989d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="JsonHelper">
+      <UniqueIdentifier>{56f5db6b-9fd1-4ec4-8fff-0d12717460c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="JsonHelper\examples">
+      <UniqueIdentifier>{4b63ce4b-6416-46b8-bfdc-9a32dfea6a14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="json">
+      <UniqueIdentifier>{61c06a0f-5832-4349-8846-eaa70a40e4c4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="base\AFDynLib.hpp">
@@ -46,10 +55,58 @@
     <ClInclude Include="base\AFDefine.hpp">
       <Filter>Base</Filter>
     </ClInclude>
+    <ClInclude Include="JsonHelper\common.h">
+      <Filter>JsonHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="JsonHelper\json_helper.h">
+      <Filter>JsonHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="JsonHelper\marshal.h">
+      <Filter>JsonHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="JsonHelper\unmarshal.h">
+      <Filter>JsonHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="JsonHelper\json\assertions.h">
+      <Filter>json</Filter>
+    </ClInclude>
+    <ClInclude Include="JsonHelper\json\autolink.h">
+      <Filter>json</Filter>
+    </ClInclude>
+    <ClInclude Include="JsonHelper\json\config.h">
+      <Filter>json</Filter>
+    </ClInclude>
+    <ClInclude Include="JsonHelper\json\features.h">
+      <Filter>json</Filter>
+    </ClInclude>
+    <ClInclude Include="JsonHelper\json\forwards.h">
+      <Filter>json</Filter>
+    </ClInclude>
+    <ClInclude Include="JsonHelper\json\json.h">
+      <Filter>json</Filter>
+    </ClInclude>
+    <ClInclude Include="JsonHelper\json\reader.h">
+      <Filter>json</Filter>
+    </ClInclude>
+    <ClInclude Include="JsonHelper\json\value.h">
+      <Filter>json</Filter>
+    </ClInclude>
+    <ClInclude Include="JsonHelper\json\version.h">
+      <Filter>json</Filter>
+    </ClInclude>
+    <ClInclude Include="JsonHelper\json\writer.h">
+      <Filter>json</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="PluginManager.cpp">
       <Filter>PluginManager</Filter>
+    </ClCompile>
+    <ClCompile Include="JsonHelper\expamles\marshal.cc">
+      <Filter>JsonHelper\examples</Filter>
+    </ClCompile>
+    <ClCompile Include="JsonHelper\expamles\unmarshal.cc">
+      <Filter>JsonHelper\examples</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
