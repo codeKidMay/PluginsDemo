@@ -14,7 +14,7 @@
 #include "boost/preprocessor/seq/for_each.hpp"  // BOOST_PP_SEQ_FOR_EACH
 #include "boost/preprocessor/stringize.hpp"     // BOOST_PP_STRINGIZE
 #include "json/json.h"
-#include "../common.h"
+#include "./common.h"
 
 namespace json_helper {
 

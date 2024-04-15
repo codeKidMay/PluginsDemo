@@ -31,5 +31,11 @@ namespace MyMainWindow
             string name = "plugin2";
             _adapter.SendMessage(name);
         }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            string name = "plugin3";
+            _adapter.SendMessage(name);
+        }
     }
 }

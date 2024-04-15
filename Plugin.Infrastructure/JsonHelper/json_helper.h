@@ -2,9 +2,9 @@
 
 #include <string>
 
-#include "./json/json.h"
-#include "../marshal.h"
-#include "../unmarshal.h"
+#include "json/json.h"
+#include "jsonhelper/marshal.h"
+#include "jsonhelper/unmarshal.h"
 
 namespace json_helper {
 

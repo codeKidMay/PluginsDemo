@@ -21,12 +21,21 @@
     <ClInclude Include="ISample1Module.h">
       <Filter>Interface</Filter>
     </ClInclude>
+    <ClInclude Include="IJsonConvertModule.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="JsonConvertModule.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Sample1Module.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Sample1Plugin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="JsonConvertModule.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

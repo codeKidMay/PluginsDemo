@@ -13,7 +13,7 @@
 #include "boost/preprocessor/stringize.hpp"     // BOOST_PP_STRINGIZE
 #include "json/config.h"
 #include "json/json.h"
-#include "../common.h"
+#include "./common.h"
 
 namespace json_helper {
 

@@ -11,7 +11,7 @@ class Foo {
  private:
   struct SubClass {
     std::string name = "sub_class";
-    float pi = 3.1415;
+    float pi = 3.1415f;
 
     JSON_HELPER(name, pi);
   };
@@ -70,4 +70,18 @@ class Foo {
 
  public:
   JSON_HELPER(money, uid, age, birthday, name, list, set, color, gender, sub_class, map, pi, ps, p_sub_class, id);
+
+  // 序列化Demo函数
+  void Example()
+  {
+      Foo foo;
+      std::string json_str;
+      ::json_helper::Marshal(foo, &json_str, true);
+      std::cout << "============ with style ============" << std::endl;
+      std::cout << json_str << std::endl;
+
+      std::cout << "=========== without style ==========" << std::endl;
+      ::json_helper::Marshal(foo, &json_str);
+      std::cout << json_str << std::endl;
+  }
 };

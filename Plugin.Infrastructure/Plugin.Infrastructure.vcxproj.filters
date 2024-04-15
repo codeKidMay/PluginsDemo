@@ -20,8 +20,8 @@
     <Filter Include="JsonHelper\examples">
       <UniqueIdentifier>{4b63ce4b-6416-46b8-bfdc-9a32dfea6a14}</UniqueIdentifier>
     </Filter>
-    <Filter Include="json">
-      <UniqueIdentifier>{61c06a0f-5832-4349-8846-eaa70a40e4c4}</UniqueIdentifier>
+    <Filter Include="Data">
+      <UniqueIdentifier>{d1fb2919-e6a6-488b-9c5f-01c62d8612d2}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -66,36 +66,6 @@
     </ClInclude>
     <ClInclude Include="JsonHelper\unmarshal.h">
       <Filter>JsonHelper</Filter>
-    </ClInclude>
-    <ClInclude Include="JsonHelper\json\assertions.h">
-      <Filter>json</Filter>
-    </ClInclude>
-    <ClInclude Include="JsonHelper\json\autolink.h">
-      <Filter>json</Filter>
-    </ClInclude>
-    <ClInclude Include="JsonHelper\json\config.h">
-      <Filter>json</Filter>
-    </ClInclude>
-    <ClInclude Include="JsonHelper\json\features.h">
-      <Filter>json</Filter>
-    </ClInclude>
-    <ClInclude Include="JsonHelper\json\forwards.h">
-      <Filter>json</Filter>
-    </ClInclude>
-    <ClInclude Include="JsonHelper\json\json.h">
-      <Filter>json</Filter>
-    </ClInclude>
-    <ClInclude Include="JsonHelper\json\reader.h">
-      <Filter>json</Filter>
-    </ClInclude>
-    <ClInclude Include="JsonHelper\json\value.h">
-      <Filter>json</Filter>
-    </ClInclude>
-    <ClInclude Include="JsonHelper\json\version.h">
-      <Filter>json</Filter>
-    </ClInclude>
-    <ClInclude Include="JsonHelper\json\writer.h">
-      <Filter>json</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

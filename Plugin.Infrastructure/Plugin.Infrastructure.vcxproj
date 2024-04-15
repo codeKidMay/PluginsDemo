@@ -29,24 +29,18 @@
     <ClInclude Include="interface\AFIModule.hpp" />
     <ClInclude Include="interface\AFIPlugin.hpp" />
     <ClInclude Include="JsonHelper\common.h" />
-    <ClInclude Include="JsonHelper\json\assertions.h" />
-    <ClInclude Include="JsonHelper\json\autolink.h" />
-    <ClInclude Include="JsonHelper\json\config.h" />
-    <ClInclude Include="JsonHelper\json\features.h" />
-    <ClInclude Include="JsonHelper\json\forwards.h" />
-    <ClInclude Include="JsonHelper\json\json.h" />
-    <ClInclude Include="JsonHelper\json\reader.h" />
-    <ClInclude Include="JsonHelper\json\value.h" />
-    <ClInclude Include="JsonHelper\json\version.h" />
-    <ClInclude Include="JsonHelper\json\writer.h" />
     <ClInclude Include="JsonHelper\json_helper.h" />
     <ClInclude Include="JsonHelper\marshal.h" />
     <ClInclude Include="JsonHelper\unmarshal.h" />
     <ClInclude Include="PluginManager.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="JsonHelper\expamles\marshal.cc" />
-    <ClCompile Include="JsonHelper\expamles\unmarshal.cc" />
+    <ClCompile Include="JsonHelper\expamles\marshal.cc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="JsonHelper\expamles\unmarshal.cc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="PluginManager.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -148,12 +142,14 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>.\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\;..\.ThirdParty\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
+      <AdditionalDependencies>jsoncpp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\.ThirdParty\lib</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
