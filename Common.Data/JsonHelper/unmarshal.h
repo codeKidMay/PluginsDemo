@@ -112,6 +112,8 @@ bool Unmarshal(const Json::Value& root, std::unordered_set<T>* const obj);
   }
   */
 
+#define UNMARSHAL_MEMBERS_END(root)
+
 #define JSON_HELPER_UNMARSHAL_MEMBER_FUNCTION(...)                                                           \
  bool Unmarshal(const Json::Value& root) {                                                                 \
     bool ret = true;                                                                                       \
@@ -128,8 +130,6 @@ bool Unmarshal(const Json::Value& root, std::unordered_set<T>* const obj);
 
 #define UNMARSHAL_MEMBERS_IMPL_NEXT(root, ...)                                                               \
  UNMARSHAL_MEMBERS_IMPL(root, __VA_ARGS__, UNMARSHAL_MEMBERS_END)
-
-#define UNMARSHAL_MEMBERS_END(root)
 
 // ==============================================  Implementation ==============================================
 // uncaught types

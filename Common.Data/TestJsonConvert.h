@@ -6,7 +6,6 @@
 #include <unordered_map>
 #include <vector>
 
-#include "../base/AFPlatform.hpp"
 #include "JsonHelper/json_helper.h"
 
 class Foo {

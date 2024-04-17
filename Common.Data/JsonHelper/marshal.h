@@ -87,7 +87,7 @@ bool Marshal(const std::unordered_set<T>& obj, Json::Value* const root);
     ret = false;                                                             \
  }
 
-#define MARSHAL_MEMBERS_END(root)
+#define MARSHAL_MEMBERS_END
 
 #define JSON_HELPER_MARSHAL_MEMBER_FUNCTION(...)                                                           \
  bool Marshal(Json::Value* root) const {                                                                 \
