@@ -123,10 +123,6 @@ typedef struct HINSTANCE__* hInstance;
     class PLUGIN_CLASS final : public AFIPlugin                                                                        \
     {                                                                                                                  \
     public:                                                                                                            \
-        int GetPluginVersion() override                                                                                \
-        {                                                                                                              \
-            return 0;                                                                                                  \
-        }                                                                                                              \
         const std::string GetPluginName() override                                                                     \
         {                                                                                                              \
             return GET_CLASS_NAME(PLUGIN_CLASS);                                                                       \
@@ -140,9 +136,8 @@ typedef struct HINSTANCE__* hInstance;
 
 #define ARK_DECLARE_PLUGIN_DLL_FUNCTION(PLUGIN_CLASS)                                                                  \
     ARK_EXPORT_FUNC void DllEntryPlugin(                                                                               \
-        AFPluginManager* pPluginManager, std::string const& plugin_name/*, AFLogger* logger*/)                         \
+        AFPluginManager* pPluginManager, std::string const& plugin_name)                                               \
     {                                                                                                                  \
-        /*AFLogger::Init(logger);*/                                                                                    \
         pPluginManager->Register<PLUGIN_CLASS>(plugin_name);                                                           \
     }                                                                                                                  \
     ARK_EXPORT_FUNC void DllExitPlugin(AFPluginManager* pPluginManager)                                                \
