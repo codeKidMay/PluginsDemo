@@ -9,14 +9,14 @@ public:
 	CPluginManager();
 	bool Initialize();
 
-	template<class IModule> ark::AFIModule* GetModule();
+	template<class IModule> AFIModule* GetModule();
 
 private:
-	ark::AFPluginManager* m_pPluginManager;
+	AFPluginManager* m_pPluginManager;
 };
 
 template<class IModule>
-inline ark::AFIModule* CPluginManager::GetModule()
+inline AFIModule* CPluginManager::GetModule()
 {
 	return m_pPluginManager->FindModule<IModule>();
 }

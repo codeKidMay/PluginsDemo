@@ -22,8 +22,6 @@
 
 #include "base/AFMacros.hpp"
 
-namespace ark {
-
 class AFIData;
 class AFIDataList;
 
@@ -72,5 +70,3 @@ using DATA_NODE_EVENT_FUNCTOR =
 using EVENT_PROCESS_FUNCTOR = std::function<int(const guid_t&, const int, const AFIDataList&)>;
 using TIMER_FUNCTOR = std::function<void(uint64_t, const guid_t&)>;
 using SCHEDULER_FUNCTOR = std::function<void()>;
-
-} // namespace ark

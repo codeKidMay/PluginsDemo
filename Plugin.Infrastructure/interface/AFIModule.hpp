@@ -23,8 +23,6 @@
 #include "base/AFPlatform.hpp"
 #include "base/AFMacros.hpp"
 
-namespace ark {
-
 class AFPluginManager;
 
 class AFIModule
@@ -89,5 +87,3 @@ public:
         // Do nothing in the module interface
     }
 };
-
-} // namespace ark

@@ -26,8 +26,6 @@
 #include "interface/AFIPlugin.hpp"
 #include "interface/AFIModule.hpp"
 
-namespace ark {
-
 class AFPluginManager final : private AFNoncopyable
 {
 public:
@@ -36,7 +34,7 @@ public:
         static AFPluginManager* instance_ = nullptr;
         if (instance_ == nullptr)
         {
-            instance_ = ARK_NEW AFPluginManager();
+            instance_ = new AFPluginManager();
         }
 
         return instance_;
@@ -103,7 +101,7 @@ public:
     template<typename PLUGIN_TYPE>
     void Register(std::string const& plugin_name)
     {
-        AFIPlugin* pNewPlugin = ARK_NEW PLUGIN_TYPE();
+        AFIPlugin* pNewPlugin = new PLUGIN_TYPE();
         std::string runtime_plugin_name = GET_CLASS_NAME(PLUGIN_TYPE);
         Register(pNewPlugin, plugin_name, runtime_plugin_name);
     }
@@ -202,7 +200,7 @@ public:
 protected:
     void Register(AFIPlugin* plugin, std::string const& plugin_name, std::string const& runtime_plugin_name)
     {
-        // e.g. plugin_name = class ark::AFKernelPlugin
+        // e.g. plugin_name = class AFKernelPlugin
         // It's a runtime name, so we cannot use it to find the plugin.conf file.
         //std::string plugin_name = plugin->GetPluginName();
 
@@ -229,7 +227,8 @@ protected:
 
         plugin->Uninstall();
         plugin_instances_.erase(plugin_name);
-        ARK_DELETE(plugin);
+        delete plugin;
+        plugin = nullptr;
     }
 
     auto FindPlugin(const std::string& plugin_name) -> AFIPlugin*
@@ -358,7 +357,8 @@ protected:
         for (auto& iter : plugin_libs_)
         {
             iter.second->UnLoad();
-            ARK_DELETE(iter.second);
+            delete iter.second;
+            iter.second = nullptr;
         }
 
         return true;
@@ -369,7 +369,7 @@ protected:
         auto iter = plugin_libs_.find(plugin_name);
         ARK_ASSERT_RET_VAL(iter == plugin_libs_.end(), false);
 
-        auto* pLib = ARK_NEW AFDynLib(plugin_name);
+        auto* pLib = new AFDynLib(plugin_name);
         ARK_ASSERT_RET_VAL(pLib != nullptr, false);
 
         bool load_ret = pLib->Load(plugin_library_dir_);
@@ -439,5 +439,3 @@ private:
     // Only include the module with self Update function. module_runtime_name -> AFIModule*
     std::unordered_map<std::string, AFIModule*> module_updates_;
 };
-
-} // namespace ark

@@ -2,8 +2,6 @@
 #include "base/AFPluginManager.hpp"
 #include "PluginManager.h"
 
-using namespace ark;
-
 static std::filesystem::path getExeDirectory() {
 	char buffer[MAX_PATH];
 	GetModuleFileName(NULL, buffer, MAX_PATH);
@@ -28,7 +26,7 @@ static bool CollectPlugins(std::filesystem::path& strPluginDir_, std::unordered_
 
 CPluginManager::CPluginManager()
 {
-	m_pPluginManager = ark::AFPluginManager::instance();
+	m_pPluginManager = AFPluginManager::instance();
 }
 
 bool CPluginManager::Initialize()

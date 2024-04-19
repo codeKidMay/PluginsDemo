@@ -20,8 +20,6 @@
 
 #pragma once
 
-namespace ark {
-
 class AFNoncopyable
 {
 protected:
@@ -34,5 +32,3 @@ public:
     AFNoncopyable(AFNoncopyable&&) = delete;
     AFNoncopyable& operator=(AFNoncopyable&&) = delete;
 };
-
-} // namespace ark

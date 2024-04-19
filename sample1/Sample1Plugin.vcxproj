@@ -316,16 +316,16 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="IJsonConvertModule.h" />
-    <ClInclude Include="ISample1Module.h" />
-    <ClInclude Include="JsonConvertModule.h" />
-    <ClInclude Include="Sample1Module.h" />
+    <ClInclude Include="IJsonConvertPlugin.h" />
+    <ClInclude Include="ISample1Plugin.h" />
+    <ClInclude Include="JsonConvertPlugin.h" />
     <ClInclude Include="Sample1Plugin.h" />
+    <ClInclude Include="Sample1PluginManager.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="JsonConvertModule.cpp" />
-    <ClCompile Include="Sample1Module.cpp" />
+    <ClCompile Include="JsonConvertPlugin.cpp" />
     <ClCompile Include="Sample1Plugin.cpp" />
+    <ClCompile Include="Sample1PluginManager.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -12,30 +12,30 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Sample1Module.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
     <ClInclude Include="Sample1Plugin.h">
       <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="ISample1Module.h">
+    <ClInclude Include="Sample1PluginManager.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ISample1Plugin.h">
       <Filter>Interface</Filter>
     </ClInclude>
-    <ClInclude Include="IJsonConvertModule.h">
+    <ClInclude Include="IJsonConvertPlugin.h">
       <Filter>Interface</Filter>
     </ClInclude>
-    <ClInclude Include="JsonConvertModule.h">
+    <ClInclude Include="JsonConvertPlugin.h">
       <Filter>Headers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Sample1Module.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Sample1Plugin.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="JsonConvertModule.cpp">
+    <ClCompile Include="Sample1PluginManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="JsonConvertPlugin.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

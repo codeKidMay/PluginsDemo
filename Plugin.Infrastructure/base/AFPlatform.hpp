@@ -221,8 +221,6 @@
 #pragma warning(disable : 4996)
 #endif
 
-namespace ark {
-
 #if defined(ARK_USE_GUID_32)
 using guid_t = int32_t;
 #elif defined(ARK_USE_GUID_128)
@@ -234,5 +232,3 @@ using guid_t = int64_t;
 using conv_id_t = uint32_t;
 using bus_id_t = int;
 using msg_id_t = uint16_t;
-
-} // namespace ark

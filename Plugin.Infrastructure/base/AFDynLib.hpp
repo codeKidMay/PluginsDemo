@@ -22,8 +22,6 @@
 
 #include "base/AFMacros.hpp"
 
-namespace ark {
-
 class AFDynLib
 {
 public:
@@ -74,5 +72,3 @@ private:
     std::string name_{};
     DYNLIB_HANDLE lib_inst_{nullptr};
 };
-
-} // namespace ark

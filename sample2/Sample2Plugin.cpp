@@ -1,19 +1,29 @@
 #include "Sample2Plugin.h"
-#include "ISample2Module.h"
-#include "Sample2Module.h"
 
-namespace ark {
-
-ARK_DECLARE_PLUGIN_DLL_FUNCTION(Sample2Plugin)
-
-void Sample2Plugin::Install()
+bool Sample2Plugin::Init()
 {
-    ARK_REGISTER_MODULE(ISample2Module, Sample2Module);
+    std::cout << GET_CLASS_NAME(Sample2Plugin) << ", Init" << std::endl;
+    return true;
 }
 
-void Sample2Plugin::Uninstall()
+bool Sample2Plugin::PostInit()
 {
-    ARK_UNREGISTER_MODULE(ISample2Module, Sample2Module);
+    return true;
 }
 
+bool Sample2Plugin::PreShut()
+{
+    std::cout << GET_CLASS_NAME(Sample2Plugin) << ", PreShut" << std::endl;
+    return true;
+}
+
+bool Sample2Plugin::Shut()
+{
+    std::cout << GET_CLASS_NAME(Sample2Plugin) << ", Shut" << std::endl;
+    return true;
+}
+
+void Sample2Plugin::ImportFile(const std::string& strFilePath_)
+{
+    MessageBox(NULL, "执行导入文件", "提示", MB_OK);
 }

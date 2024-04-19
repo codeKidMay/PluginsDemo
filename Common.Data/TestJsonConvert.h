@@ -14,7 +14,7 @@ private:
         std::string name = "sub_class";
         float pi = 3.1415f;
 
-        JSON_HELPER(name, pi);
+        //JSON_HELPER(name, pi);
     };
 
     enum Color {
@@ -70,5 +70,5 @@ private:
     std::mutex mtx_;
 
 public:
-    JSON_HELPER(money, uid, age, birthday, name, list, set, color, gender, sub_class, map, pi, ps, p_sub_class, id);
+    //JSON_HELPER(money, uid, age, birthday, name, list, set, color, gender, sub_class, map, pi, ps, p_sub_class, id);
 };

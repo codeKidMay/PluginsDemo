@@ -1,22 +1,38 @@
+#include <iostream>
+#include "base/AFMacros.hpp"
 #include "Sample1Plugin.h"
-#include "Sample1Module.h"
-#include "IJsonConvertModule.h"
-#include "JsonConvertModule.h"
 
-namespace ark {
-
-ARK_DECLARE_PLUGIN_DLL_FUNCTION(Sample1Plugin)
-
-void Sample1Plugin::Install()
+bool Sample1Module::Init()
 {
-    ARK_REGISTER_MODULE(ISample1Module, Sample1Module);
-    ARK_REGISTER_MODULE(IJsonConvertModule, JsonConvertModule);
+    std::cout << GET_CLASS_NAME(Sample1Module) << ", Init" << std::endl;
+    m_pSample2Module = FindModule<ISample2Plugin>();
+
+    return true;
 }
 
-void Sample1Plugin::Uninstall()
+bool Sample1Module::PostInit()
 {
-    ARK_UNREGISTER_MODULE(ISample1Module, Sample1Module);
-    ARK_UNREGISTER_MODULE(IJsonConvertModule, JsonConvertModule);
+    return true;
 }
 
-} // namespace ark
+bool Sample1Module::Update()
+{
+    return true;
+}
+
+bool Sample1Module::PreShut()
+{
+    return true;
+}
+
+bool Sample1Module::Shut()
+{
+    return true;
+}
+
+void Sample1Module::PartRecognition(const std::string& strFilePath_)
+{
+    m_pSample2Module->ImportFile(strFilePath_);
+
+    MessageBox(NULL, "执行零件识别", "提示", MB_OK);
+}

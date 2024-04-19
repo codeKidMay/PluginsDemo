@@ -1,11 +1,9 @@
 #include <iostream>
 #include "CommandManager.h"
 #include "../Plugin.Infrastructure/PluginManager.h"
-#include "../sample1/ISample1Module.h"
-#include "../sample1/IJsonConvertModule.h"
-#include "../Plugin.Infrastructure/data/TestJsonConvert.h"
-
-using namespace ark;
+#include "../sample1/ISample1Plugin.h"
+#include "../sample1/IJsonConvertPlugin.h"
+//#include "../Plugin.Infrastructure/data/TestJsonConvert.h"
 
 CommandManager::CommandManager()
 {
@@ -24,16 +22,6 @@ CommandManager::~CommandManager()
 
 bool CommandManager::SendMessage(const std::string& strCommandName_)
 {
-	Foo foo;
-	std::string json_str;
-	::json_helper::Marshal(foo, &json_str, true);
-	std::cout << "============ with style ============" << std::endl;
-	std::cout << json_str << std::endl;
-
-	std::cout << "=========== without style ==========" << std::endl;
-	::json_helper::Marshal(foo, &json_str);
-	std::cout << json_str << std::endl;
-
 	std::cout << "µ÷ÓÃÃüÁî£º" << strCommandName_ << std::endl;
 	auto _commandIter = m_mapCommands.find(strCommandName_);
 	if (_commandIter != m_mapCommands.end())

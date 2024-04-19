@@ -12,21 +12,21 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Sample2Module.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
     <ClInclude Include="Sample2Plugin.h">
       <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="ISample2Module.h">
+    <ClInclude Include="Sample2PluginManager.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ISample2Plugin.h">
       <Filter>Interface</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Sample2Module.cpp">
+    <ClCompile Include="Sample2Plugin.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Sample2Plugin.cpp">
+    <ClCompile Include="Sample2PluginManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

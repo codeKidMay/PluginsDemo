@@ -24,8 +24,6 @@
 #include "base/AFMacros.hpp"
 #include "base/AFNoncopyable.hpp"
 
-namespace ark {
-
 template<typename T>
 class AFSingleton : public AFNoncopyable
 {
@@ -43,7 +41,8 @@ public:
 
     static void ShutDown()
     {
-        ARK_DELETE(instance_);
+        delete instance_;
+        instance_ = nullptr;
     }
 
     // We can pass a pointer to init it manually.
@@ -57,7 +56,7 @@ private:
     {
         if (instance_ == nullptr)
         {
-            instance_ = ARK_NEW T();
+            instance_ = new T();
         }
     }
 
@@ -70,5 +69,3 @@ std::once_flag AFSingleton<T>::once_;
 
 template<typename T>
 T* AFSingleton<T>::instance_ = nullptr;
-
-} // namespace ark

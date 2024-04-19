@@ -20,27 +20,7 @@
 
 #pragma once
 
-#include "base/AFPlatform.hpp"
+#include "interface/AFIPlugin.hpp"
+#include "base/AFPluginManager.hpp"
 
-class AFPluginManager;
-
-class AFIPlugin
-{
-public:
-    virtual ~AFIPlugin() = default;
-    virtual int GetPluginVersion() = 0;
-    virtual const std::string GetPluginName() = 0;
-
-    virtual void Install() = 0;
-    virtual void Uninstall() = 0;
-
-    AFPluginManager* GetPluginManager() const { return plugin_manager_; }
-    void SetPluginManager(AFPluginManager* p) { plugin_manager_ = p; }
-
-    std::string const& GetPluginConf() const { return plugin_conf_; }
-    void SetPluginConf(std::string const& value) { plugin_conf_ = value; }
-
-protected:
-    AFPluginManager* plugin_manager_{ nullptr };
-    std::string plugin_conf_;
-};
+ARK_DECLARE_PLUGINMANAGER(Sample1PluginManager)
