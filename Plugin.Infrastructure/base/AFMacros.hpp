@@ -132,7 +132,17 @@ typedef struct HINSTANCE__* hInstance;
                                                                                                                        \
     private:                                                                                                           \
         std::unordered_map<std::string, AFIModule*> modules_;                                                          \
-    };
+    };                                                                                                                 \
+                                                                                                                       \
+    ARK_EXPORT_FUNC void DllEntryPlugin(                                                                               \
+        AFPluginManager* pPluginManager, std::string const& plugin_name)                                               \
+    {                                                                                                                  \
+        pPluginManager->Register<PLUGIN_CLASS>(plugin_name);                                                           \
+    }                                                                                                                  \
+    ARK_EXPORT_FUNC void DllExitPlugin(AFPluginManager* pPluginManager)                                                \
+    {                                                                                                                  \
+        pPluginManager->Unregister<PLUGIN_CLASS>();                                                                    \
+    }
 
 #define ARK_DECLARE_PLUGIN_DLL_FUNCTION(PLUGIN_CLASS)                                                                  \
     ARK_EXPORT_FUNC void DllEntryPlugin(                                                                               \
@@ -145,7 +155,7 @@ typedef struct HINSTANCE__* hInstance;
         pPluginManager->Unregister<PLUGIN_CLASS>();                                                                    \
     }
 
-#define ARK_REGISTER_MODULE(MODULE, DERIVED_MODULE)                                                                    \
+#define REGISTER_PLUGIN(MODULE, DERIVED_MODULE)                                                                    \
     do                                                                                                                 \
     {                                                                                                                  \
         ARK_ASSERT_RET_NONE((std::is_base_of<AFIModule, MODULE>::value));                                              \
@@ -162,7 +172,7 @@ typedef struct HINSTANCE__* hInstance;
         }                                                                                                              \
     } while (0)
 
-#define ARK_UNREGISTER_MODULE(MODULE, DERIVED_MODULE)                                                                  \
+#define UNREGISTER_PLUGIN(MODULE, DERIVED_MODULE)                                                                  \
     {                                                                                                                  \
         ARK_ASSERT_RET_NONE((std::is_base_of<AFIModule, MODULE>::value));                                              \
         ARK_ASSERT_RET_NONE((std::is_base_of<MODULE, DERIVED_MODULE>::value));                                         \

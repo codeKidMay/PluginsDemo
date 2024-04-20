@@ -157,16 +157,6 @@ public:
         bus_id_ = value;
     }
 
-    auto GetAppName() const -> const std::string&
-    {
-        return app_name_;
-    }
-
-    void SetAppName(const std::string& value)
-    {
-        app_name_ = value;
-    }
-
     void SetAppConf(const std::string& value)
     {
         ARK_ASSERT_RET_NONE(!value.empty());
@@ -422,8 +412,6 @@ private:
     std::string plugin_conf_dir_{};
     // xx.app.conf file path
     std::string app_conf_path_{};
-    // app name
-    std::string app_name_{"ark"};
 
     using DLL_ENTRY_PLUGIN_FUNC = void (*)(AFPluginManager*, std::string const& /*, AFLogger */ );
     using DLL_EXIT_PLUGIN_FUNC = void (*)(AFPluginManager*);

@@ -12,8 +12,5 @@ namespace CSharpAdapter
 
         // 公共方法
         bool SendMessage(String^ commandName);
-
-    private:
-        CommandManager* m_pCommandManager;
     };
 }

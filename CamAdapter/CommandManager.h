@@ -1,7 +1,6 @@
 #pragma once
 #include <string>
 #include <map>
-#include <functional>
 
 class CPluginManager;
 class CommandManager
@@ -18,7 +17,6 @@ private:
 	void Plugin3();
 
 private:
-	CPluginManager* m_pPluginManager;
-	std::map<std::string, std::function<void()>> m_mapCommands;
+	//CPluginManager* m_pPluginManager;
 };
 

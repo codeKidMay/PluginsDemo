@@ -18,18 +18,9 @@
     <ClInclude Include="CSharpAdapter.h">
       <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="CommandManager.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="TestJsonConvert.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CSharpAdapter.cpp">
-      <Filter>Sources</Filter>
-    </ClCompile>
-    <ClCompile Include="CommandManager.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
   </ItemGroup>

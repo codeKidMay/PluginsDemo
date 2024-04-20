@@ -1,5 +1,4 @@
-﻿
-using CSharpAdapter;
+﻿using CSharpAdapter;
 using Microsoft.CSharp;
 using System;
 using System.Runtime.InteropServices;
@@ -10,8 +9,6 @@ namespace MyMainWindow
     /// <summary>
     /// MainWindow.xaml 的交互逻辑
     /// </summary>
-
-
     public partial class MainWindow : Window
     {
         private readonly NcAdapter _adapter = new NcAdapter();

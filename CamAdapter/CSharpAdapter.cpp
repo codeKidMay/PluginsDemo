@@ -6,7 +6,6 @@ namespace CSharpAdapter
 {
 	NcAdapter::NcAdapter()
 	{
-		m_pCommandManager = new CommandManager();
 	}
 
 	bool NcAdapter::SendMessage(String^ commandName)
@@ -14,7 +13,6 @@ namespace CSharpAdapter
 		IntPtr ptr = Marshal::StringToHGlobalAnsi(commandName);
 		std::string strCommandName = reinterpret_cast<char*>(ptr.ToPointer());
 		Marshal::FreeHGlobal(ptr);
-		m_pCommandManager->SendMessage(strCommandName);
 
 		return true;
 	}
