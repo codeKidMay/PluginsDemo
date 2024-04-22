@@ -20,7 +20,8 @@
 
 #pragma once
 
-#include "base/AFPlatform.hpp"
+#include <map>
+#include <functional>
 #include "base/AFMacros.hpp"
 
 class AFPluginManager;
@@ -30,6 +31,9 @@ class AFIModule
 public:
     AFIModule() = default;
     virtual ~AFIModule() = default;
+
+#define AddCommand(name, func) m_mapCommands.insert(std::make_pair(name, std::bind(func, this)));
+#define AddMessageCommand(name, func) m_mapFunctions.insert(std::make_pair(name, std::bind(func, this, std::placeholders::_1, std::placeholders::_2)));
 
     virtual bool Init()
     {
@@ -82,4 +86,7 @@ protected:
 protected:
     AFPluginManager* plugin_manager_{ nullptr };
     std::string name_{};
+
+    std::map<std::string, std::function<void()>> m_mapCommands;
+    std::map<std::string, std::function<void(WPARAM, LPARAM)>> m_mapFunctions;
 };

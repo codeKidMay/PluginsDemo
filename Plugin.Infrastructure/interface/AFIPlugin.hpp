@@ -28,7 +28,6 @@ class AFIPlugin
 {
 public:
     virtual ~AFIPlugin() = default;
-    virtual int GetPluginVersion() = 0;
     virtual const std::string GetPluginName() = 0;
 
     virtual void Install() = 0;
