@@ -1,9 +1,7 @@
 #include "Sample1PluginManager.h"
-#include "Sample1Plugin.h"
-#include "IJsonConvertPlugin.h"
-#include "JsonConvertPlugin.h"
 
-ARK_DECLARE_PLUGIN_DLL_FUNCTION(Sample1PluginManager)
+#include "Sample1Plugin.h"
+#include "JsonConvertPlugin.h"
 
 void Sample1PluginManager::Install()
 {

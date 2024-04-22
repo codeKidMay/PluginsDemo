@@ -1,8 +1,6 @@
 #include "Sample2PluginManager.h"
-#include "ISample2Plugin.h"
-#include "Sample2Plugin.h"
 
-ARK_DECLARE_PLUGIN_DLL_FUNCTION(Sample2PluginManager)
+#include "Sample2Plugin.h"
 
 void Sample2PluginManager::Install()
 {

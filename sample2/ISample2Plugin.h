@@ -8,6 +8,7 @@ class ISample2Plugin : public AFIModule
 {
 public:
     explicit ISample2Plugin() = default;
+    virtual ~ISample2Plugin() = 0;
 
     virtual void ImportFile(const std::string& strFilePath_) = 0;
 };

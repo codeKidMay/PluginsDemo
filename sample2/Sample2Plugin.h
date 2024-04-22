@@ -4,7 +4,6 @@
 
 class Sample2Plugin final : public ISample2Plugin
 {
-    ARK_DECLARE_MODULE_FUNCTIONS
 public:
     explicit Sample2Plugin() = default;
 

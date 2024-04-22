@@ -66,24 +66,20 @@ public:
         return true;
     }
 
-    virtual AFPluginManager* GetPluginManager() const
+    AFPluginManager* GetPluginManager() const { return plugin_manager_; }
+    void SetPluginManager(AFPluginManager* p) { plugin_manager_ = p; }
+
+    const std::string& GetName() const { return name_; }
+    void SetName(const std::string& value) { name_ = value; }
+
+protected:
+    template<typename MODULE>
+    MODULE* FindModule()
     {
-        return nullptr;
+        return GetPluginManager()->template FindModule<MODULE>();
     }
 
-    virtual void SetPluginManager(AFPluginManager* p)
-    {
-        // Do nothing in the module interface
-    }
-
-    virtual const std::string& GetName() const
-    {
-        static const std::string null_str = "";
-        return null_str;
-    }
-
-    virtual void SetName(const std::string& value)
-    {
-        // Do nothing in the module interface
-    }
+protected:
+    AFPluginManager* plugin_manager_{ nullptr };
+    std::string name_{};
 };
