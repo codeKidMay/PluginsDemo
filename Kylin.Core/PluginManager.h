@@ -3,7 +3,7 @@
 #include "interface/AFIModule.hpp"
 #include "base/AFPluginManager.hpp"
 
-class PLUGIN_MANAGE_EXP CPluginManager
+class CPluginManager
 {
 public:
 	CPluginManager();

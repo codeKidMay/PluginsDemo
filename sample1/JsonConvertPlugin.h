@@ -5,7 +5,6 @@
 
 class JsonConvertModule final : public IJsonConvertModule
 {
-    ARK_DECLARE_MODULE_FUNCTIONS
 public:
     void Serialize();
 

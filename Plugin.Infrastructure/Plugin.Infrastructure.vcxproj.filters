@@ -4,24 +4,12 @@
     <Filter Include="Interface">
       <UniqueIdentifier>{9842b535-5e96-43d5-b987-8509cde3ae00}</UniqueIdentifier>
     </Filter>
-    <Filter Include="PluginManager">
-      <UniqueIdentifier>{905daec5-28b3-46bb-adc7-995285586272}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Base">
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
     <Filter Include="Base\Pattern">
       <UniqueIdentifier>{567fb5ff-dc12-472e-855f-6a248622989d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="JsonHelper">
-      <UniqueIdentifier>{56f5db6b-9fd1-4ec4-8fff-0d12717460c2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="JsonHelper\examples">
-      <UniqueIdentifier>{4b63ce4b-6416-46b8-bfdc-9a32dfea6a14}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Data">
-      <UniqueIdentifier>{d1fb2919-e6a6-488b-9c5f-01c62d8612d2}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -49,34 +37,8 @@
     <ClInclude Include="interface\AFIPlugin.hpp">
       <Filter>Interface</Filter>
     </ClInclude>
-    <ClInclude Include="PluginManager.h">
-      <Filter>PluginManager</Filter>
-    </ClInclude>
     <ClInclude Include="base\AFDefine.hpp">
       <Filter>Base</Filter>
     </ClInclude>
-    <ClInclude Include="JsonHelper\common.h">
-      <Filter>JsonHelper</Filter>
-    </ClInclude>
-    <ClInclude Include="JsonHelper\json_helper.h">
-      <Filter>JsonHelper</Filter>
-    </ClInclude>
-    <ClInclude Include="JsonHelper\marshal.h">
-      <Filter>JsonHelper</Filter>
-    </ClInclude>
-    <ClInclude Include="JsonHelper\unmarshal.h">
-      <Filter>JsonHelper</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="PluginManager.cpp">
-      <Filter>PluginManager</Filter>
-    </ClCompile>
-    <ClCompile Include="JsonHelper\expamles\marshal.cc">
-      <Filter>JsonHelper\examples</Filter>
-    </ClCompile>
-    <ClCompile Include="JsonHelper\expamles\unmarshal.cc">
-      <Filter>JsonHelper\examples</Filter>
-    </ClCompile>
   </ItemGroup>
 </Project>

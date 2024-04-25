@@ -187,6 +187,11 @@ public:
         return plugin->GetPluginConf();
     }
 
+public:
+    void Subscribe(const std::string& topic, Callback callback) {
+        subscribers_[topic].push_back(callback);
+    }
+
 protected:
     void Register(AFIPlugin* plugin, std::string const& plugin_name, std::string const& runtime_plugin_name)
     {
@@ -426,4 +431,6 @@ private:
     std::unordered_map<std::string, AFIModule*> module_instances_;
     // Only include the module with self Update function. module_runtime_name -> AFIModule*
     std::unordered_map<std::string, AFIModule*> module_updates_;
+    // 通知消息路由表
+    std::unordered_map<std::string, std::list<std::function<void(WPARAM,LPARAM)>>> subscribers_;
 };

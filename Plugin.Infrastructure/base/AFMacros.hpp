@@ -184,39 +184,5 @@ typedef struct HINSTANCE__* hInstance;
         delete pDeregModule;                                                                                           \
         pDeregModule = nullptr;                                                                                        \
     }
-
-//////////////////////////////////////////////////////////////////////////
-// Module macros
-#define ARK_DECLARE_MODULE_FUNCTIONS                                                                                   \
-public:                                                                                                                \
-    AFPluginManager* GetPluginManager() const override                                                                 \
-    {                                                                                                                  \
-        return plugin_manager_;                                                                                        \
-    }                                                                                                                  \
-    void SetPluginManager(AFPluginManager* p) override                                                                 \
-    {                                                                                                                  \
-        ARK_ASSERT_RET_NONE(p != nullptr);                                                                             \
-        plugin_manager_ = p;                                                                                           \
-    }                                                                                                                  \
-    const std::string& GetName() const override                                                                        \
-    {                                                                                                                  \
-        return name_;                                                                                                  \
-    }                                                                                                                  \
-    void SetName(const std::string& value) override                                                                    \
-    {                                                                                                                  \
-        name_ = value;                                                                                                 \
-    }                                                                                                                  \
-                                                                                                                       \
-protected:                                                                                                             \
-    template<typename MODULE>                                                                                          \
-    MODULE* FindModule()                                                                                               \
-    {                                                                                                                  \
-        return GetPluginManager()->template FindModule<MODULE>();                                                      \
-    }                                                                                                                  \
-                                                                                                                       \
-private:                                                                                                               \
-    AFPluginManager* plugin_manager_{nullptr};                                                                         \
-    std::string name_{};
-////////////////////////////////////////////////////////////////////////////
 #pragma endregion
 

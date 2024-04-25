@@ -31,6 +31,13 @@ public:
     AFIModule() = default;
     virtual ~AFIModule() = default;
 
+    AFPluginManager* GetPluginManager() const { return m_pPluginManager; }
+    void SetPluginManager(AFPluginManager* p) { m_pPluginManager = p; }
+
+    const std::string& GetName() const { return m_strName; }
+    void SetName(const std::string& value) { m_strName = value; }
+
+public:
     virtual bool Init()
     {
         return true;
@@ -66,24 +73,14 @@ public:
         return true;
     }
 
-    virtual AFPluginManager* GetPluginManager() const
+protected:
+    template<typename MODULE>
+    MODULE* FindModule()
     {
-        return nullptr;
+        return GetPluginManager()->template FindModule<MODULE>();
     }
 
-    virtual void SetPluginManager(AFPluginManager* p)
-    {
-        // Do nothing in the module interface
-    }
-
-    virtual const std::string& GetName() const
-    {
-        static const std::string null_str = "";
-        return null_str;
-    }
-
-    virtual void SetName(const std::string& value)
-    {
-        // Do nothing in the module interface
-    }
+    AFPluginManager* m_pPluginManager{ nullptr };
+    std::string m_strName;
 };
+
