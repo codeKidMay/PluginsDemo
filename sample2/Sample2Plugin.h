@@ -5,8 +5,6 @@
 class Sample2Plugin final : public ISample2Plugin
 {
 public:
-    explicit Sample2Plugin() = default;
-
     bool Init() override;
     bool PostInit() override;
     bool PreShut() override;
@@ -14,4 +12,11 @@ public:
 
 public:
     void ImportFile(const std::string& strFilePath_) override;
+
+protected:
+    void TestAddCommand();
+    void TestCommandWithParam(WPARAM wParam_, LPARAM lParam_);
+
+private:
+    int m_nTestParam;
 };
