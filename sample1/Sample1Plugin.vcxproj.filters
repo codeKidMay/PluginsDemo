@@ -4,36 +4,24 @@
     <Filter Include="Interface">
       <UniqueIdentifier>{84e9bfce-3937-4ca6-9bc4-67a3af45b1fc}</UniqueIdentifier>
     </Filter>
-    <Filter Include="PluginManager">
-      <UniqueIdentifier>{bdcfe824-728d-4f3d-ab21-39e2fb16c567}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Plugins">
+    <Filter Include="Module">
       <UniqueIdentifier>{EFF7B129-DC38-348E-BBAA-AFC9F29AB2EA}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ISample1Plugin.h">
+    <ClInclude Include="ISample1Module.h">
       <Filter>Interface</Filter>
     </ClInclude>
-    <ClInclude Include="IJsonConvertPlugin.h">
-      <Filter>Interface</Filter>
-    </ClInclude>
-    <ClInclude Include="Sample1PluginManager.h">
-      <Filter>PluginManager</Filter>
-    </ClInclude>
-    <ClInclude Include="JsonConvertPlugin.h">
-      <Filter>Plugins</Filter>
+    <ClInclude Include="Sample1Module.h">
+      <Filter>Module</Filter>
     </ClInclude>
     <ClInclude Include="Sample1Plugin.h">
-      <Filter>Plugins</Filter>
+      <Filter>Interface</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Sample1Plugin.cpp">
-      <Filter>Plugins</Filter>
-    </ClCompile>
-    <ClCompile Include="JsonConvertPlugin.cpp">
-      <Filter>Plugins</Filter>
+    <ClCompile Include="Sample1Module.cpp">
+      <Filter>Module</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

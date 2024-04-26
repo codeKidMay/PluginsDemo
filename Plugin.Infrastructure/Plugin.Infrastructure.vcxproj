@@ -19,15 +19,15 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="base\AFDefine.hpp" />
     <ClInclude Include="base\AFDynLib.hpp" />
+    <ClInclude Include="base\AFIModule.hpp" />
+    <ClInclude Include="base\AFIPlugin.hpp" />
     <ClInclude Include="base\AFMacros.hpp" />
-    <ClInclude Include="base\AFNoncopyable.hpp" />
     <ClInclude Include="base\AFPlatform.hpp" />
     <ClInclude Include="base\AFPluginManager.hpp" />
-    <ClInclude Include="base\pattern\AFSingleton.hpp" />
-    <ClInclude Include="interface\AFIModule.hpp" />
-    <ClInclude Include="interface\AFIPlugin.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="IModule.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

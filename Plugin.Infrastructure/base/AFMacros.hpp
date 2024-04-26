@@ -22,39 +22,13 @@
 
 #include "base/AFPlatform.hpp"
 
-/*
- * Copy src to string dst of size siz.  At most siz-1 characters
- * will be copied.  Always NUL terminates (unless siz == 0).
- * Returns strlen(src); if retval >= siz, truncation occurred.
- */
-inline size_t strlcpy(char* dst, const char* src, size_t siz)
-{
-    char* d = dst;
-    const char* s = src;
-    size_t n = siz;
+typedef std::function<void()> CommandCallBack;
+typedef std::function<bool(WPARAM, LPARAM)> MessageCallBack;
+typedef std::function<void(WPARAM, LPARAM)> NotifyCallBack;
 
-    /* Copy as many bytes as will fit */
-    if ((n != 0) && ((--n) != 0))
-    {
-        do
-        {
-            if ((*d++ = *s++) == 0)
-                break;
-        } while (--n != 0);
-    }
-
-    /* Not enough room in dst, add NUL and traverse rest of src */
-    if (n == 0)
-    {
-        if (siz != 0)
-            *d = '\0'; /* NUL-terminate dst */
-
-        while (*s++)
-            ;
-    }
-
-    return (s - src - 1); /* count does not include NUL */
-}
+#define ADD_COMMAND(name, func) AddCommand(name, std::bind(func, this));
+#define ADD_COMMAND_MSG(name, func) AddCommandMsg(name, std::bind(func, this, std::placeholders::_1, std::placeholders::_2));
+#define ADD_NOTIFY_MSG(name, func) AddNotifyMsg(name, std::bind(func, this, std::placeholders::_1, std::placeholders::_2));
 
 #define ARK_EXPORT_FUNC extern "C" __declspec(dllexport)
 #define ARK_EXPORT __declspec(dllexport)
@@ -76,21 +50,6 @@ typedef struct HINSTANCE__* hInstance;
         assert(exp_);                                                                                                  \
         return val;                                                                                                    \
     } while (false)
-
-#define ARK_ASSERT_RET_VAL_NO_EFFECT(exp_, val)                                                                        \
-    do                                                                                                                 \
-    {                                                                                                                  \
-        if ((exp_))                                                                                                    \
-            break;                                                                                                     \
-        return val;                                                                                                    \
-    } while (false)
-
-#define ARK_ASSERT_BREAK(exp_)                                                                                         \
-    if (!(exp_))                                                                                                       \
-    {                                                                                                                  \
-        assert(exp_);                                                                                                  \
-        break;                                                                                                         \
-    }
 
 #define ARK_ASSERT_CONTINUE(exp_)                                                                                      \
     if (!(exp_))                                                                                                       \
@@ -134,17 +93,6 @@ typedef struct HINSTANCE__* hInstance;
         std::unordered_map<std::string, AFIModule*> modules_;                                                          \
     };                                                                                                                 \
                                                                                                                        \
-    ARK_EXPORT_FUNC void DllEntryPlugin(                                                                               \
-        AFPluginManager* pPluginManager, std::string const& plugin_name)                                               \
-    {                                                                                                                  \
-        pPluginManager->Register<PLUGIN_CLASS>(plugin_name);                                                           \
-    }                                                                                                                  \
-    ARK_EXPORT_FUNC void DllExitPlugin(AFPluginManager* pPluginManager)                                                \
-    {                                                                                                                  \
-        pPluginManager->Unregister<PLUGIN_CLASS>();                                                                    \
-    }
-
-#define ARK_DECLARE_PLUGIN_DLL_FUNCTION(PLUGIN_CLASS)                                                                  \
     ARK_EXPORT_FUNC void DllEntryPlugin(                                                                               \
         AFPluginManager* pPluginManager, std::string const& plugin_name)                                               \
     {                                                                                                                  \

@@ -316,12 +316,12 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="ISample2Plugin.h" />
+    <ClInclude Include="ISample2Module.h" />
+    <ClInclude Include="Sample2Module.h" />
     <ClInclude Include="Sample2Plugin.h" />
-    <ClInclude Include="Sample2PluginManager.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Sample2Plugin.cpp" />
+    <ClCompile Include="Sample2Module.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

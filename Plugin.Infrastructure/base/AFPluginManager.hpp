@@ -1,32 +1,10 @@
-/*
- * This source file is part of ARK
- * For the latest info, see https://github.com/ArkNX
- *
- * Copyright (c) 2013-2020 ArkNX authors.
- *
- * Licensed under the Apache License, Version 2.0 (the "License"),
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- *
- */
-
 #pragma once
 
-#include "base/AFDefine.hpp"
-#include "base/AFNoncopyable.hpp"
 #include "base/AFDynLib.hpp"
-#include "interface/AFIPlugin.hpp"
-#include "interface/AFIModule.hpp"
+#include "base/AFIPlugin.hpp"
+#include "base/AFIModule.hpp"
 
-class AFPluginManager final : private AFNoncopyable
+class AFPluginManager
 {
 public:
     static auto instance() -> AFPluginManager*
@@ -43,15 +21,11 @@ public:
     auto Start(int64_t const timestamp, std::string const& lib_dir, std::string const& conf_dir,
         std::unordered_map<std::string, std::string> const& plugins) -> bool
     {
-        timestamp_ = timestamp;
-
         plugin_library_dir_ = lib_dir;
-        plugin_conf_dir_ = conf_dir;
         plugins_ = plugins;
 
         ARK_ASSERT_RET_VAL(Init(), false);
         ARK_ASSERT_RET_VAL(PostInit(), false);
-        ARK_ASSERT_RET_VAL(CheckConfig(), false);
         ARK_ASSERT_RET_VAL(PreUpdate(), false);
 
         return true;
@@ -59,8 +33,6 @@ public:
 
     auto Stop(const int64_t timestamp) -> bool
     {
-        timestamp_ = timestamp;
-
         PreShut();
         Shut();
 
@@ -69,8 +41,6 @@ public:
 
     auto Update(const int64_t timestamp) -> bool
     {
-        timestamp_ = timestamp;
-
         // Just loop the modules which have update function.
         for (const auto& iter : module_updates_)
         {
@@ -142,54 +112,61 @@ public:
         module_updates_.erase(module_name);
     }
 
-    auto GetNowTime() const -> int64_t
-    {
-        return timestamp_;
-    }
-
-    auto GetBusID() const -> bus_id_t
-    {
-        return bus_id_;
-    }
-
-    void SetBusID(const bus_id_t value)
-    {
-        bus_id_ = value;
-    }
-
-    void SetAppConf(const std::string& value)
-    {
-        ARK_ASSERT_RET_NONE(!value.empty());
-        ARK_ASSERT_RET_NONE(value.find(".app.conf") != std::string::npos);
-
-        app_conf_path_ = value;
-    }
-
-    auto GetAppConf() const -> std::string const&
-    {
-        return app_conf_path_;
-    }
-
-    auto GetPluginConf(std::string const& plugin_name) -> std::string const&
-    {
-        const static std::string null_str;
-        ARK_ASSERT_RET_VAL(!plugin_name.empty(), null_str);
-        auto iter = plugins_.find(plugin_name);
-        return iter != plugins_.end() ? iter->second : null_str;
-    }
-
-    template<typename PLUGIN_TYPE>
-    auto GetPluginConf() -> const std::string&
-    {
-        auto plugin = FindPlugin<PLUGIN_TYPE>();
-        ARK_ASSERT_RET_VAL(plugin != nullptr, NULL_STR);
-
-        return plugin->GetPluginConf();
-    }
-
 public:
-    void Subscribe(const std::string& topic, Callback callback) {
-        subscribers_[topic].push_back(callback);
+    void AddCommand(const std::string& strTopic_, const CommandCallBack& Callback_)
+    {
+        m_mapCommands.insert(std::make_pair(strTopic_, Callback_));
+    }
+
+    void AddCommandMsg(const std::string& strTopic_, const MessageCallBack& Callback_)
+    {
+        m_mapFunctions.insert(std::make_pair(strTopic_, Callback_));
+    }
+
+    void AddNotifyMsg(const std::string& strTopic_, const NotifyCallBack& Callback_)
+    {
+        m_mapNotifyFunctions[strTopic_].push_back(Callback_);
+    }
+
+    // 发送命令
+    bool SendCommand(const std::string& strCommandName_)
+    {
+        auto _iter = m_mapCommands.find(strCommandName_);
+        if (_iter != m_mapCommands.end())
+        {
+            m_mapCommands[strCommandName_]();
+            return true;
+        }
+
+        return false;
+    }
+
+    // 发送带参数的命令
+    bool SendCommandMsg(const std::string& strMsgName_, WPARAM wParam_, LPARAM lParam_)
+    {
+        auto _iter = m_mapFunctions.find(strMsgName_);
+        if (_iter != m_mapFunctions.end())
+        {
+            return m_mapFunctions[strMsgName_](wParam_, lParam_);
+        }
+
+        return false;
+    }
+
+    // 发送通知消息
+    bool SendNotifyMsg(const std::string& strNotifyMsgName_, WPARAM wParam_, LPARAM lParam_)
+    {
+        auto _iter = m_mapNotifyFunctions.find(strNotifyMsgName_);
+        if (_iter != m_mapNotifyFunctions.end())
+        {
+            for (auto& _NotifyCallback : _iter->second)
+            {
+                _NotifyCallback(wParam_, lParam_);
+            }
+            return true;
+        }
+
+        return false;
     }
 
 protected:
@@ -205,8 +182,6 @@ protected:
         ARK_ASSERT_NO_EFFECT(iter != plugins_.end());
 
         plugin->SetPluginManager(this);
-        // set plugin self configuration
-        plugin->SetPluginConf(plugin_conf_dir_ + iter->second);
         // Install modules
         plugin->Install();
         // manage this plugin
@@ -295,19 +270,6 @@ protected:
         return true;
     }
 
-    auto CheckConfig() -> bool
-    {
-        for (auto const& iter : module_instances_)
-        {
-            AFIModule* pModule = iter.second;
-            ARK_ASSERT_CONTINUE(pModule != nullptr);
-
-            pModule->CheckConfig();
-        }
-
-        return true;
-    }
-
     auto PreUpdate() -> bool
     {
         for (auto const& iter : module_instances_)
@@ -384,7 +346,6 @@ protected:
 #else
             auto error = dlerror();
 #endif
-            //ARK_LOG_ERROR("Load shared library[{}] failed, ErrorNo[{}]", pLib->GetName(), error);
             ARK_ASSERT_RET_VAL(0, false);
         }
 
@@ -407,16 +368,8 @@ protected:
     }
 
 private:
-    // Bus id
-    int bus_id_{0};
-    // Current time(ms)
-    int64_t timestamp_{0};
     // plugin so/dll file dir
     std::string plugin_library_dir_{};
-    // xx.plugin.conf file path
-    std::string plugin_conf_dir_{};
-    // xx.app.conf file path
-    std::string app_conf_path_{};
 
     using DLL_ENTRY_PLUGIN_FUNC = void (*)(AFPluginManager*, std::string const& /*, AFLogger */ );
     using DLL_EXIT_PLUGIN_FUNC = void (*)(AFPluginManager*);
@@ -431,6 +384,11 @@ private:
     std::unordered_map<std::string, AFIModule*> module_instances_;
     // Only include the module with self Update function. module_runtime_name -> AFIModule*
     std::unordered_map<std::string, AFIModule*> module_updates_;
+
+    // 无参命令路由表
+    std::map<std::string, CommandCallBack> m_mapCommands;
+    // 有参命令路由表
+    std::map<std::string, MessageCallBack> m_mapFunctions;
     // 通知消息路由表
-    std::unordered_map<std::string, std::list<std::function<void(WPARAM,LPARAM)>>> subscribers_;
+    std::unordered_map<std::string, std::list<NotifyCallBack>> m_mapNotifyFunctions;
 };

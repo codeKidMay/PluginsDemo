@@ -1,3 +1,4 @@
+#include <string>
 #include <msclr/marshal.h>
 #include "CSharpAdapter.h"
 
@@ -17,4 +18,3 @@ namespace CSharpAdapter
 		return true;
 	}
 }
-

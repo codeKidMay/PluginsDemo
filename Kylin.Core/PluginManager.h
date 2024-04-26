@@ -1,6 +1,6 @@
 #pragma once
 #include "base/AFPlatform.hpp"
-#include "interface/AFIModule.hpp"
+#include "base/AFIModule.hpp"
 #include "base/AFPluginManager.hpp"
 
 class CPluginManager

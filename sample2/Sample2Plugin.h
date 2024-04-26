@@ -1,22 +1,21 @@
 #pragma once
 
-#include "ISample2Plugin.h"
+#include "base/AFIPlugin.hpp"
+#include "base/AFPluginManager.hpp"
 
-class Sample2Plugin final : public ISample2Plugin
+#include "Sample2Plugin.h"
+#include "Sample2Module.h"
+
+
+ARK_DECLARE_PLUGINMANAGER(Sample2Plugin)
+
+void Sample2Plugin::Install()
 {
-public:
-    bool Init() override;
-    bool PostInit() override;
-    bool PreShut() override;
-    bool Shut() override;
+    REGISTER_PLUGIN(ISample2Module, Sample2Module);
+}
 
-public:
-    void ImportFile(const std::string& strFilePath_) override;
+void Sample2Plugin::Uninstall()
+{
+    UNREGISTER_PLUGIN(ISample2Module, Sample2Module);
+}
 
-protected:
-    void TestAddCommand();
-    void TestCommandWithParam(WPARAM wParam_, LPARAM lParam_);
-
-private:
-    int m_nTestParam;
-};

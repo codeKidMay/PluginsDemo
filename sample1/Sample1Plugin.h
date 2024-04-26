@@ -1,20 +1,18 @@
 #pragma once
 
-#include "ISample1Plugin.h"
-#include "..\sample2\ISample2Plugin.h"
+#include "base/AFIPlugin.hpp"
+#include "base/AFPluginManager.hpp"
 
-class Sample1Module final : public ISample1Module
+#include "Sample1Module.h"
+
+ARK_DECLARE_PLUGINMANAGER(Sample1Plugin)
+
+void Sample1Plugin::Install()
 {
-public:
-    bool Init() override;
-    bool PostInit() override;
-    bool Update() override;
-    bool PreShut() override;
-    bool Shut() override;
+    REGISTER_PLUGIN(ISample1Module, Sample1Module);
+}
 
-public:
-    void PartRecognition(const std::string& strFilePath_) override;
-
-private:
-    ISample2Plugin* m_pSample2Module;
-};
+void Sample1Plugin::Uninstall()
+{
+    UNREGISTER_PLUGIN(ISample1Module, Sample1Module);
+}
